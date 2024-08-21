@@ -37,14 +37,14 @@ const getAccessToken = async () => {
 // Call the function to get access token
 getAccessToken();
 
-const shortCode = '174379'; // Replace with actual short code
+const shortCode = process.env.SHORT_CODE; // Replace with actual short code
 const initiator = 'testapi';
-const securityCredential = 'en4gBfuhkK1ofd1UrRrsiEUGshiAbZxWHfGGDXiGBpvD0qqjc7XEpmDb4SLpwkI0gpZPoNNquv5qVGt5Y+7BLkLUlC9b2k3C6pSfQb8duI/YUEH1pl+3PaRywKVSw2MuZrAzeO/sPTjsnd6VaQGKpAiYL8M4zGom/5Wi6A4clv+XQYcwJxJQygnZgjhLwu76sS4Mg+qZG/5uK6UJRvnjN9kGTohXjfTrqBz7voJEyS/v/E9UWzMA73SgmV/DgcZg7JsnayzPAr+pS3L8NIDMpIncNgRAGEH/oVSZc/oZPJDod31TDxQjrQd1omF4mEKQQiv644o7vau9P9b/AijGfA=='; // Replace with actual security credential
+const securityCredential = process.env.SECURITY_CREDENTIAL; // Replace with actual security credential
 const commandId = 'TransactionStatusQuery';
 const transactionId = 'OEI2AK4Q16';
 const partyA = '600996';
 const identifierType = '4'; // Default value for party A is 4 (MSISDN)
-const passKey = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919'; // Replace with actual pass key
+const passKey = process.env.PASS_KEY; // Replace with actual pass key
 
 app.get('/gen', async (req, res) => {
   if (!accessToken) {
